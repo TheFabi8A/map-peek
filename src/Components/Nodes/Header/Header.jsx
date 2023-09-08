@@ -19,8 +19,6 @@ import { useContext, useState } from "react";
 import { SearchIcon } from "../../Svg";
 import { CountriesContext } from "@countries-context";
 
-CountriesContext;
-
 export default function Header() {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
@@ -59,7 +57,7 @@ export default function Header() {
               onPress={() => setContinentFilter("Americas")}
               key="Americas"
             >
-              America
+              Americas
             </DropdownItem>
             <DropdownItem onPress={() => setContinentFilter("Asia")} key="Asia">
               Asia
@@ -100,7 +98,7 @@ export default function Header() {
 
   return (
     <>
-      <Navbar onMenuOpenChange={setisMenuOpen} isBordered>
+      <Navbar onMenuOpenChange={setisMenuOpen} isBordered isBlurred="false">
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}

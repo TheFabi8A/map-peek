@@ -21,7 +21,5 @@ export default function useFetch() {
       .finally(() => setFetching(false));
   }, []);
 
-  console.log(dataCountries);
-
   return { dataCountries, isFetching, errorFetch };
 }
