@@ -4,10 +4,9 @@
 
 @font-face {
   font-family: "ns-variable";
-  src: url("assets/fonts/NunitoSans-VariableFont.woff2") format("woff2"),
-  url("assets/fonts/NunitoSans-VariableFont.ttf")format("truetype");
+  src:
+    url("fonts/NunitoSans-VariableFont.woff2") format("woff2"),
+    url("fonts/NunitoSans-VariableFont.ttf") format("truetype");
   font-style: normal;
   font-display: swap;
 }
-
-/*! antes de hacer el deploy a vercel eliminar el [ assets/ ] */
