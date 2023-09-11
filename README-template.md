@@ -8,13 +8,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -31,14 +25,12 @@ Los usuarios deberían poder:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](/screenshot.jpg)
 
 ### Links
 
 - Solution URL: [Solution](https://your-solution-url.com)
 - Live Site URL: [LiveURL](https://rest-countries-thefabi8a.vercel.app/)
-
-## My process
 
 ### Built with
 

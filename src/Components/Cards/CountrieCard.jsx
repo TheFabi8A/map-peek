@@ -46,20 +46,18 @@ export default function CountrieCard() {
 
               const TIMEZONE = () => {
                 return (
-                  <>
-                    <div className="flex gap-2">
-                      <h3>Timezones:</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {timezones.map((timezone) => {
-                          return (
-                            <Chip size="sm" radius="sm" key={timezone}>
-                              {timezone}
-                            </Chip>
-                          );
-                        })}
-                      </div>
+                  <div className="flex gap-2">
+                    <h3>Timezones:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {timezones.map((timezone) => {
+                        return (
+                          <Chip size="sm" radius="sm" key={timezone}>
+                            {timezone}
+                          </Chip>
+                        );
+                      })}
                     </div>
-                  </>
+                  </div>
                 );
               };
 
@@ -74,19 +72,20 @@ export default function CountrieCard() {
 
               // !Demonyms
 
-              const femaleEngDemonyms = demonyms.eng.f;
-              const maleEngDemonyms = demonyms.eng.m;
-
               const DEMONYMS = () => {
                 return (
                   <>
-                    <div>
-                      <h3>Demonyms:</h3>
-                      <ul className="list-inside list-disc">
-                        <li>Male: {maleEngDemonyms}</li>
-                        <li>Female: {femaleEngDemonyms}</li>
-                      </ul>
-                    </div>
+                    {demonyms && (
+                      <>
+                        <div>
+                          <h3>Demonyms:</h3>
+                          <ul className="list-inside list-disc">
+                            <li>Male: {demonyms?.eng?.m}</li>
+                            <li>Female: {demonyms?.eng?.f}</li>
+                          </ul>
+                        </div>
+                      </>
+                    )}
                   </>
                 );
               };
@@ -128,13 +127,17 @@ export default function CountrieCard() {
                     <div className="flex gap-2">
                       <h3>Languages:</h3>
                       <div className="flex flex-wrap gap-2">
-                        {Object.keys(languages).map((languageCode) => {
-                          return (
-                            <Chip size="sm" radius="sm" key={languageCode}>
-                              {languages[languageCode]}
-                            </Chip>
-                          );
-                        })}
+                        {languages && (
+                          <>
+                            {Object.keys(languages).map((languageCode) => {
+                              return (
+                                <Chip size="sm" radius="sm" key={languageCode}>
+                                  {languages[languageCode]}
+                                </Chip>
+                              );
+                            })}
+                          </>
+                        )}
                       </div>
                     </div>
                   </>

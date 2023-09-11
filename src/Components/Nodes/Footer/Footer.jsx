@@ -5,7 +5,7 @@ import { CountriesContext } from "@countries-context";
 export default function Footer() {
   const isMobileView = window.innerWidth < 640;
 
-  const { dataCountries, setCurrentPage, countriesFiltered } =
+  const { dataCountries, setCurrentPage, countriesFiltered, currentPage } =
     useContext(CountriesContext);
 
   return (
@@ -16,6 +16,7 @@ export default function Footer() {
             Developed by TheFabi8A
           </p>
           <Pagination
+            page={currentPage}
             boundaries={isMobileView ? 0 : 1}
             color="default"
             variant="bordered"

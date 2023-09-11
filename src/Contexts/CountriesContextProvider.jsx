@@ -64,6 +64,8 @@ export default function CountriesContextProvider({ children }) {
       })
     : [];
 
+  console.log(continentFilter);
+
   return (
     <CountriesContext.Provider
       value={{
@@ -77,7 +79,7 @@ export default function CountriesContextProvider({ children }) {
         continentFilter,
         setContinentFilter,
         currentPage,
-        setCurrentPage
+        setCurrentPage,
       }}
     >
       {children}

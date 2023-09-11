@@ -12,6 +12,7 @@ import {
   Button,
   DropdownMenu,
   DropdownItem,
+  DropdownSection,
 } from "@nextui-org/react";
 
 import { BtnToggleTheme } from "../../Buttons";
@@ -22,11 +23,25 @@ import { CountriesContext } from "@countries-context";
 export default function Header() {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
-  const { searchQuery, setSearchQuery, setContinentFilter, continentFilter } =
-    useContext(CountriesContext);
+  const {
+    searchQuery,
+    setSearchQuery,
+    setContinentFilter,
+    continentFilter,
+    setCurrentPage,
+  } = useContext(CountriesContext);
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
+  };
+
+  const handleOptionRegion = (region) => {
+    setCurrentPage(1);
+    setContinentFilter(region);
+  };
+
+  const handleRegionSelection = (selectedRegion) => {
+    handleOptionRegion(selectedRegion);
   };
 
   const DROPDOWN_FILTER_REGION = () => {
@@ -42,38 +57,47 @@ export default function Header() {
             disallowEmptySelection
             selectedKeys={[continentFilter]}
             defaultSelectedKeys={"All"}
-            onSelectionChange={setContinentFilter}
+            onSelectionChange={(selectedKeys) => {
+              handleRegionSelection(Array.from(selectedKeys)[0]);
+            }}
           >
-            <DropdownItem onPress={() => setContinentFilter("All")} key="All">
-              All
-            </DropdownItem>
-            <DropdownItem
-              onPress={() => setContinentFilter("Africa")}
-              key="Africa"
-            >
-              Africa
-            </DropdownItem>
-            <DropdownItem
-              onPress={() => setContinentFilter("Americas")}
-              key="Americas"
-            >
-              Americas
-            </DropdownItem>
-            <DropdownItem onPress={() => setContinentFilter("Asia")} key="Asia">
-              Asia
-            </DropdownItem>
-            <DropdownItem
-              onPress={() => setContinentFilter("Europe")}
-              key="Europe"
-            >
-              Europe
-            </DropdownItem>
-            <DropdownItem
-              onPress={() => setContinentFilter("Oceania")}
-              key="Oceania"
-            >
-              Oceania
-            </DropdownItem>
+            <DropdownSection showDivider>
+              <DropdownItem onPress={() => handleOptionRegion("All")} key="All">
+                All
+              </DropdownItem>
+            </DropdownSection>
+            <DropdownSection>
+              <DropdownItem
+                onPress={() => handleOptionRegion("Africa")}
+                key="Africa"
+              >
+                Africa
+              </DropdownItem>
+              <DropdownItem
+                onPress={() => handleOptionRegion("Americas")}
+                key="Americas"
+              >
+                Americas
+              </DropdownItem>
+              <DropdownItem
+                onPress={() => handleOptionRegion("Asia")}
+                key="Asia"
+              >
+                Asia
+              </DropdownItem>
+              <DropdownItem
+                onPress={() => handleOptionRegion("Europe")}
+                key="Europe"
+              >
+                Europe
+              </DropdownItem>
+              <DropdownItem
+                onPress={() => handleOptionRegion("Oceania")}
+                key="Oceania"
+              >
+                Oceania
+              </DropdownItem>
+            </DropdownSection>
           </DropdownMenu>
         </Dropdown>
       </>
