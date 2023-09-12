@@ -14,7 +14,7 @@ import {
 import { Index } from ".";
 import { GoogleMapsIcon } from "../Svg";
 
-export default function CountrieCard() {
+export default function CountryCard() {
   const { countriesFiltered, dataCountries, currentPage } =
     useContext(CountriesContext);
 
@@ -41,6 +41,29 @@ export default function CountrieCard() {
                 maps,
                 timezones,
               } = countrie;
+
+              // !Capital
+
+              const CAPITAL = () => {
+                return (
+                  <>
+                    {capital ? (
+                      <>
+                        <div className="flex gap-2">
+                          <h3>Capital:</h3>
+                          <p>{capital}</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-bold italic text-danger">
+                          This country don&apos;t have capital.
+                        </p>
+                      </>
+                    )}
+                  </>
+                );
+              };
 
               // !Timezones
 
@@ -69,6 +92,23 @@ export default function CountrieCard() {
 
               const populationFormated =
                 spanishPopulationNumberFormat.format(population);
+
+              const POPULATION = () => {
+                return (
+                  <>
+                    {population !== 0 ? (
+                      <div className="flex gap-2">
+                        <h3>Population:</h3>
+                        <p>{populationFormated}</p>
+                      </div>
+                    ) : (
+                      <p className="font-bold italic text-danger">
+                        This country isn&apos;t inhabited...
+                      </p>
+                    )}
+                  </>
+                );
+              };
 
               // !Demonyms
 
@@ -166,24 +206,26 @@ export default function CountrieCard() {
                         <h2 className="text-2xl font-black tracking-wide">
                           {name.official}
                         </h2>
-                        {showFlags[index] && (
-                          <>
-                            {coatOfArms &&
-                            Object.keys(coatOfArms).length === 0 ? (
-                              <p className="text-xl font-bold text-danger">
-                                <span className="text-warning">[</span> This
-                                country doesn&apos;t have a coat of arms{" "}
-                                <span className="text-warning">]</span>
-                              </p>
-                            ) : (
-                              <p className="text-xl font-bold text-success">
-                                <span className="text-warning">[</span> Coat of
-                                Arms version{" "}
-                                <span className="text-warning">]</span>
-                              </p>
-                            )}
-                          </>
-                        )}
+                        <>
+                          {showFlags[index] && (
+                            <>
+                              {coatOfArms &&
+                              Object.keys(coatOfArms).length === 0 ? (
+                                <p className="text-xl font-bold text-danger">
+                                  <span className="text-warning">[</span> This
+                                  country doesn&apos;t have a coat of arms{" "}
+                                  <span className="text-warning">]</span>
+                                </p>
+                              ) : (
+                                <p className="text-xl font-bold text-success">
+                                  <span className="text-warning">[</span> Coat
+                                  of Arms version{" "}
+                                  <span className="text-warning">]</span>
+                                </p>
+                              )}
+                            </>
+                          )}
+                        </>
                       </div>
                       <Button
                         className="h-max w-max shrink-0 p-1"
@@ -195,18 +237,12 @@ export default function CountrieCard() {
                         <GoogleMapsIcon className="h-12 w-12" />
                       </Button>
                     </div>
-                    <div className="flex gap-2">
-                      <h3>Population:</h3>
-                      <p>{populationFormated}</p>
-                    </div>
+                    {POPULATION()}
                     <div className="flex gap-2">
                       <h3>Region:</h3>
                       <p>{region}</p>
                     </div>
-                    <div className="flex gap-2">
-                      <h3>Capital:</h3>
-                      <p>{capital}</p>
-                    </div>
+                    {CAPITAL()}
                     {BORDERS()}
                     {DEMONYMS()}
                     {LANGUAGES()}

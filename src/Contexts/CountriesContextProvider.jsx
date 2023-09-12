@@ -47,24 +47,21 @@ export default function CountriesContextProvider({ children }) {
   }, []);
 
   const countriesFiltered = dataCountries
-    ? dataCountries.filter((countrie) => {
+    ? dataCountries.filter((country) => {
         const nameMatchesSearchQuery =
-          countrie.name.common
+          country.name.common
             .toLowerCase()
             .includes(searchQuery.toLowerCase()) ||
-          countrie.name.official
+          country.name.official
             .toLowerCase()
             .includes(searchQuery.toLowerCase());
 
         const continentFilteredSelected =
-          continentFilter === "All" ||
-          countrie.region.includes(continentFilter);
+          continentFilter === "All" || country.region.includes(continentFilter);
 
         return nameMatchesSearchQuery && continentFilteredSelected;
       })
     : [];
-
-  console.log(continentFilter);
 
   return (
     <CountriesContext.Provider

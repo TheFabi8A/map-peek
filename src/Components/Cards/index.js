@@ -5,7 +5,7 @@ export const Index = () => {
   const { countriesFiltered } = useContext(CountriesContext);
 
   const [showFlags, setShowFlags] = useState(
-    Array(countriesFiltered.length).fill(true),
+    Array(countriesFiltered.length).fill(false),
   );
 
   const toggleImage = (index) => {

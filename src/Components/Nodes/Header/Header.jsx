@@ -19,6 +19,7 @@ import { BtnToggleTheme } from "../../Buttons";
 import { useContext, useState } from "react";
 import { SearchIcon } from "../../Svg";
 import { CountriesContext } from "@countries-context";
+import BtnGitHubProfile from "../../Buttons/BtnGitHubProfile/BtnGitHubProfile";
 
 export default function Header() {
   const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -74,6 +75,12 @@ export default function Header() {
                 Africa
               </DropdownItem>
               <DropdownItem
+                onPress={() => handleOptionRegion("Antarctic")}
+                key="Antarctic"
+              >
+                Antarctic
+              </DropdownItem>
+              <DropdownItem
                 onPress={() => handleOptionRegion("Americas")}
                 key="Americas"
               >
@@ -108,6 +115,7 @@ export default function Header() {
     return (
       <>
         <Input
+          variant="bordered"
           onClear={() => setSearchQuery("")}
           value={searchQuery}
           startContent={
@@ -123,14 +131,20 @@ export default function Header() {
   return (
     <>
       <Navbar onMenuOpenChange={setisMenuOpen} isBordered isBlurred="false">
+        <NavbarContent className="hidden h-max sm:block">
+          <NavbarItem>
+            <BtnGitHubProfile user="TheFabi8A" />
+          </NavbarItem>
+        </NavbarContent>
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
           />
+
           <NavbarBrand>
             <h1 className="text-base font-bold sm:text-xl">
-              Where in the world
+              Where in the world?
             </h1>
           </NavbarBrand>
         </NavbarContent>
@@ -148,8 +162,8 @@ export default function Header() {
         <NavbarMenu>
           <NavbarMenuItem>{INPUT_FILTER_NAME()}</NavbarMenuItem>
           <NavbarMenuItem>{DROPDOWN_FILTER_REGION()}</NavbarMenuItem>
-          <NavbarMenuItem>
-            <Button>thefabi8a</Button>
+          <NavbarMenuItem className="mt-72 self-center">
+            <BtnGitHubProfile user="TheFabi8A" />
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>
