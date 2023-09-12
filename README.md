@@ -27,7 +27,7 @@ Los usuarios deberían poder:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
+- Solution URL: [Solution in FrontendMentor](https://www.frontendmentor.io/solutions/rest-countries-api-ezO9TpntY8)
 - Live Site URL: [LiveURL](https://rest-countries-thefabi8a.vercel.app/)
 
 ### Built with
