@@ -1,6 +1,6 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# REST Countries API
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
 
 ## Table of contents
 
@@ -14,12 +14,12 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ### The challenge
 
-Los usuarios deberían poder:
+Users should be able to:
 
-- Ver todos los países desde la API en la página de inicio
-- Busque un país usando un campo de "entrada"
-- Filtrar países por región
-- Alternar la combinación de colores entre el modo claro y oscuro _(opcional)_
+- View all countries from the API on the home page ✅
+- Search for a country using an "input" field ✅
+- Filter countries by region ✅
+- Toggle color scheme between light and dark mode _(optional)_ ✅
 
 ### Screenshot
 
@@ -27,17 +27,24 @@ Los usuarios deberían poder:
 
 ### Links
 
-- Solution URL: [Solution in FrontendMentor](https://www.frontendmentor.io/solutions/rest-countries-api-ezO9TpntY8)
-- Live Site URL: [LiveURL](https://rest-countries-thefabi8a.vercel.app/)
+[![Vercel](https://img.shields.io/badge/live_site-000?style=for-the-badge&logo=vercel&logoColor=black&labelColor=fff)](https://rest-countries-thefabi8a.vercel.app/)
+
+[![FrontendMentor](https://img.shields.io/badge/solution-fff?style=for-the-badge&logo=frontendmentor&logoColor=white&labelColor=101010)](https://www.frontendmentor.io/solutions/rest-countries-api-ezO9TpntY8)
 
 ### Built with
 
-- [React](https://reactjs.org/) - JS library
-- [Tailwindcss]() - For some styles
-- [NextUI](https://nextui.org/) - For UI Components
+[![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=101010)]()
+
+[![Tailwindcss](https://img.shields.io/badge/tailwindcss-61DAFB?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=101010)]()
+
+[![NextUI](https://img.shields.io/badge/NextUI-fff?style=for-the-badge&logo=Next.js&logoColor=white&labelColor=101010)](https://nextui.org/docs/guide/introduction)
 
 ## Author
 
-- Website - [TheFabi8A](https://www.thefabi8a.dev)
-- Frontend Mentor - [@TheFabi8A](https://www.frontendmentor.io/profile/TheFabi8A)
-- Twitter - [@TheFabi8A](https://twitter.com/TheFabi8ADev)
+[![Portfolio](https://img.shields.io/badge/thefabi8a.dev-fff?style=for-the-badge&logo=dev.to&logoColor=white&labelColor=101010)](https://thefabi8a.dev)
+
+[![LinkedIn](https://img.shields.io/badge/fabian_ochoa-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/fabian-ochoa)
+
+[![FrontendMentor](https://img.shields.io/badge/thefabi8a-fff?style=for-the-badge&logo=frontendmentor&logoColor=white&labelColor=101010)](https://www.frontendmentor.io/profile/TheFabi8A)
+
+[![X](https://img.shields.io/badge/TheFabi8A-1DA1F2?style=for-the-badge&logo=X&logoColor=white&labelColor=101010)](https://twitter.com/TheFabi8ADev)
