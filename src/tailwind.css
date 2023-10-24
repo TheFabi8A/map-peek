@@ -5,8 +5,9 @@
 @font-face {
   font-family: "ns-variable";
   src:
-    url("fonts/NunitoSans-VariableFont.woff2") format("woff2"),
-    url("fonts/NunitoSans-VariableFont.ttf") format("truetype");
+    url("/assets/fonts/NunitoSans-VariableFont.woff2") format("woff2"),
+    url("/assets/fonts/NunitoSans-VariableFont.ttf") format("truetype");
   font-style: normal;
+  font-weight: normal;
   font-display: swap;
 }

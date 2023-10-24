@@ -5,13 +5,16 @@ import "./tailwind.css";
 import { NextUIProvider } from "@nextui-org/react";
 
 import CountriesContextProvider from "@countries-context";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <NextUIProvider>
-      <CountriesContextProvider>
-        <App />
-      </CountriesContextProvider>
-    </NextUIProvider>
-  </React.StrictMode>
+    <BrowserRouter>
+      <NextUIProvider>
+        <CountriesContextProvider>
+          <App />
+        </CountriesContextProvider>
+      </NextUIProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
 );

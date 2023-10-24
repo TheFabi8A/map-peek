@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { CircularProgress } from "@nextui-org/react";
+import { CircularProgress } from "@nextui-org/progress";
 
 import Application from "./Application";
 import { CountriesContext } from "@countries-context";
@@ -19,7 +19,9 @@ export default function App() {
           />
         </div>
       ) : (
-        <Application />
+        <>
+          <Application />
+        </>
       )}
     </>
   );

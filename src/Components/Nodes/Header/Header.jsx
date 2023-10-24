@@ -1,4 +1,18 @@
 import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  DropdownSection,
+} from "@nextui-org/dropdown";
+
+import { Input } from "@nextui-org/input";
+
+import { Link as LinkUI } from "@nextui-org/link";
+
+import { Button } from "@nextui-org/button";
+
+import {
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -6,20 +20,12 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Input,
-  Dropdown,
-  DropdownTrigger,
-  Button,
-  DropdownMenu,
-  DropdownItem,
-  DropdownSection,
-} from "@nextui-org/react";
+} from "@nextui-org/navbar";
 
 import { BtnToggleTheme } from "../../Buttons";
 import { useContext, useState } from "react";
-import { SearchIcon } from "../../Svg";
+import { OctIcon, SearchIcon } from "../../Svg";
 import { CountriesContext } from "@countries-context";
-import BtnGitHubProfile from "../../Buttons/BtnGitHubProfile/BtnGitHubProfile";
 
 export default function Header() {
   const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -33,7 +39,8 @@ export default function Header() {
   } = useContext(CountriesContext);
 
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+    const value = event.target.value;
+    setSearchQuery(value);
   };
 
   const handleOptionRegion = (region) => {
@@ -115,6 +122,8 @@ export default function Header() {
     return (
       <>
         <Input
+          aria-label="Buscar pais"
+          placeholder="Search for a country..."
           variant="bordered"
           onClear={() => setSearchQuery("")}
           value={searchQuery}
@@ -128,26 +137,40 @@ export default function Header() {
     );
   };
 
+  const BUTTON_TO_REPO = () => {
+    return (
+      <Button
+        variant="bordered"
+        className="p-2"
+        as={LinkUI}
+        isExternal
+        href="https://github.com/TheFabi8A/map-peek"
+        title="View repo on GitHub"
+        startContent={<OctIcon className="w-5 fill-black dark:fill-white" />}
+      >
+        GitHub Repo
+      </Button>
+    );
+  };
+
   return (
     <>
       <Navbar onMenuOpenChange={setisMenuOpen} isBordered isBlurred="false">
         <NavbarContent className="hidden h-max sm:block">
-          <NavbarItem>
-            <BtnGitHubProfile user="TheFabi8A" />
-          </NavbarItem>
+          <NavbarItem>{BUTTON_TO_REPO()}</NavbarItem>
         </NavbarContent>
         <NavbarContent>
           <NavbarMenuToggle
+            title={isMenuOpen ? "Close menu" : "Open menu"}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
           />
-
-          <NavbarBrand>
-            <h1 className="text-base font-bold sm:text-xl">
-              Where in the world?
-            </h1>
-          </NavbarBrand>
         </NavbarContent>
+        <NavbarBrand>
+          <h1 className="text-base font-bold sm:text-xl">
+            Where in the world?
+          </h1>
+        </NavbarBrand>
         <NavbarContent className="hidden h-max sm:flex" justify="center">
           <NavbarItem>{INPUT_FILTER_NAME()}</NavbarItem>
         </NavbarContent>
@@ -163,7 +186,7 @@ export default function Header() {
           <NavbarMenuItem>{INPUT_FILTER_NAME()}</NavbarMenuItem>
           <NavbarMenuItem>{DROPDOWN_FILTER_REGION()}</NavbarMenuItem>
           <NavbarMenuItem className="mt-72 self-center">
-            <BtnGitHubProfile user="TheFabi8A" />
+            {BUTTON_TO_REPO()}
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>

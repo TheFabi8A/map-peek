@@ -1,16 +1,14 @@
 import { useContext } from "react";
 import { CountriesContext } from "@countries-context";
-import {
-  Card,
-  CardHeader,
-  Image,
-  CardBody,
-  Divider,
-  Chip,
-  Button,
-  Link,
-  CardFooter,
-} from "@nextui-org/react";
+
+import { Image } from "@nextui-org/image";
+import { Divider } from "@nextui-org/divider";
+import { Chip } from "@nextui-org/chip";
+import { Button } from "@nextui-org/button";
+import { Link as LinkUI } from "@nextui-org/link";
+
+import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+
 import { Index } from ".";
 import { GoogleMapsIcon } from "../Svg";
 
@@ -25,7 +23,7 @@ export default function CountryCard() {
       {dataCountries && (
         <>
           {countriesFiltered
-            .slice((currentPage - 1) * 20, currentPage * 20)
+            .slice((currentPage - 1) * 8, currentPage * 8)
             .map((countrie, index) => {
               const {
                 name,
@@ -186,17 +184,19 @@ export default function CountryCard() {
 
               return (
                 <Card
-                  onClick={() => toggleImage(index)}
                   isPressable
-                  disableAnimation
+                  disableRipple
                   key={area}
-                  className="mb-4 h-max w-full flex-col gap-2 rounded-lg"
+                  className="w-full max-w-sm flex-col gap-2 rounded-lg"
                 >
                   <CardHeader className="justify-center">
                     <Image
-                      className="max-h-64 w-full select-none object-scale-down"
-                      isBlurred
+                      width="200"
+                      height="100"
+                      className="max-h-64 min-h-[200px] w-full select-none object-scale-down"
+                      onClick={() => toggleImage(index)}
                       src={showFlags[index] ? coatOfArms.svg : flags.svg}
+                      alt={flags.alt ? `${flags.alt}` : `${name.official} flag`}
                     />
                   </CardHeader>
                   <Divider />
@@ -228,13 +228,14 @@ export default function CountryCard() {
                         </>
                       </div>
                       <Button
-                        className="h-max w-max shrink-0 p-1"
-                        isIconOnly
-                        as={Link}
+                        title="View on Google Maps"
+                        as={LinkUI}
                         href={maps.googleMaps}
-                        target="blank"
+                        isIconOnly
+                        isExternal
+                        className="p-3"
                       >
-                        <GoogleMapsIcon className="h-12 w-12" />
+                        <GoogleMapsIcon />
                       </Button>
                     </div>
                     {POPULATION()}

@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-[![Vercel](https://img.shields.io/badge/live_site-000?style=for-the-badge&logo=vercel&logoColor=black&labelColor=fff)](https://rest-countries-thefabi8a.vercel.app/)
+[![Vercel](https://img.shields.io/badge/live_site-000?style=for-the-badge&logo=vercel&logoColor=black&labelColor=fff)](https://map-peek.vercel.app/)
 
 [![FrontendMentor](https://img.shields.io/badge/solution-fff?style=for-the-badge&logo=frontendmentor&logoColor=white&labelColor=101010)](https://www.frontendmentor.io/solutions/rest-countries-api-ezO9TpntY8)
 

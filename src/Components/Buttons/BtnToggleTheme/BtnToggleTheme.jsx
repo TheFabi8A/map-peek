@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
 
 import { MoonIcon, SunIcon } from "../../Svg";
 
@@ -18,12 +18,12 @@ export default function BtnToggleTheme() {
     <Button
       color={null}
       size={isMobileView ? "sm" : "md"}
-      aria-label={`${
-        theme === "dark" ? "cambiar al tema claro" : "cambiar al tema oscuro"
-      }`}
+      title={`Activated ${theme === "dark" ? "light" : "dark"} theme`}
       onClick={themeSwitch}
+      startContent={
+        <span className="uppercase">{theme === "dark" ? "light" : "dark"}</span>
+      }
     >
-      <span className="uppercase">{theme === "dark" ? "light" : "dark"}</span>
       {theme === "dark" ? <SunIcon /> : <MoonIcon />}
     </Button>
   );

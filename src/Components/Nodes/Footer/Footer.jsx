@@ -1,4 +1,4 @@
-import { Pagination } from "@nextui-org/react";
+import { Pagination } from "@nextui-org/pagination";
 import { useContext } from "react";
 import { CountriesContext } from "@countries-context";
 
@@ -22,7 +22,7 @@ export default function Footer() {
             className="m-0"
             onChange={setCurrentPage}
             size="lg"
-            total={Math.ceil(countriesFiltered.length / 20)}
+            total={Math.ceil(countriesFiltered.length / 8)}
           />
         </footer>
       )}
