@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Screenshots
 
-![](/screenshot-dark.png)
-![](/screenshot-light.png)
+![https://github.com/TheFabi8A/map-peek](https://github.com/TheFabi8A/map-peek/blob/main/public/screenshot-dark.png)
+![https://github.com/TheFabi8A/map-peek](https://github.com/TheFabi8A/map-peek/blob/main/public/screenshot-light.png)
 
 ### Links
 
