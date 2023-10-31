@@ -6,7 +6,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [Author](#author)
 
@@ -16,14 +16,18 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 Users should be able to:
 
-- View all countries from the API on the home page ✅
+- See all countries from the API on the home page ✅
 - Search for a country using an "input" field ✅
 - Filter countries by region ✅
+- Click on a country to see more detailed information on a separate page. ✅
+- Click through to the border countries on the detail page. ✅
+- View the optimal layout for the interface depending on their device's screen size. ✅
 - Toggle color scheme between light and dark mode _(optional)_ ✅
 
-### Screenshot
+### Screenshots
 
-![](/screenshot.png)
+![](/screenshot-dark.png)
+![](/screenshot-light.png)
 
 ### Links
 

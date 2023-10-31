@@ -1,3 +1,5 @@
+export { default as CountryCard } from "./CountryCard";
+
 import { useContext, useState } from "react";
 import { CountriesContext } from "@countries-context";
 

@@ -11,12 +11,19 @@ export default function Footer() {
   return (
     <>
       {dataCountries && (
-        <footer className="fixed bottom-0 left-0 z-10 flex h-16 w-full justify-center bg-white dark:bg-black">
+        <footer className="fixed bottom-0 left-0 z-10 flex h-16 w-full justify-center bg-slate-500 transition-background dark:bg-slate-800">
           <Pagination
+            classNames={{
+              next: "text-success dark:bg-slate-700 transition-background",
+              prev: "text-success dark:bg-slate-700 transition-background",
+              item: "border-success dark:bg-slate-700 bg-slate-300",
+              forwardIcon: "text-success",
+              ellipsis: "text-success",
+            }}
             page={currentPage}
             boundaries={isMobileView ? 0 : 1}
-            color="default"
-            variant="bordered"
+            color="success"
+            variant="faded"
             showControls
             initialPage={1}
             className="m-0"

@@ -12,19 +12,23 @@ export default function BtnToggleTheme() {
   const { theme } = useContext(CountriesContext);
   const { themeSwitch } = Index();
 
-  const isMobileView = window.innerWidth < 640;
-
   return (
     <Button
-      color={null}
-      size={isMobileView ? "sm" : "md"}
+      className="border-success text-lime-800 dark:bg-slate-800 dark:text-success"
+      variant="faded"
       title={`Activated ${theme === "dark" ? "light" : "dark"} theme`}
       onClick={themeSwitch}
       startContent={
-        <span className="uppercase">{theme === "dark" ? "light" : "dark"}</span>
+        <span className="pt-[1px] uppercase">
+          {theme === "dark" ? "light" : "dark"}
+        </span>
       }
     >
-      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      {theme === "dark" ? (
+        <SunIcon className="w-4 fill-white" />
+      ) : (
+        <MoonIcon className="w-4 fill-slate-500" />
+      )}
     </Button>
   );
 }

@@ -11,3 +11,14 @@
   font-weight: normal;
   font-display: swap;
 }
+
+.link-header svg {
+  flex-shrink: 0;
+  width: 2rem;
+}
+
+@layer base {
+  h3 {
+    @apply font-bold;
+  }
+}

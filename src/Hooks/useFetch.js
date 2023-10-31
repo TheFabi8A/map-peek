@@ -9,7 +9,13 @@ export default function useFetch() {
     setFetching(true);
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
-      .then((data) => setDataCountries(data))
+      .then((data) => {
+        const dataWithIds = data.map((item, index) => ({
+          ...item,
+          id: index,
+        }));
+        setDataCountries(dataWithIds);
+      })
       .catch((error) => setErrorFetch(error.message))
       .finally(() => setFetching(false));
   }, []);

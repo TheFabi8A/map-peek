@@ -6,7 +6,7 @@ Main.propTypes = {
 
 export default function Main({ children }) {
   return (
-    <main className="flex max-w-[1920px] flex-wrap justify-center gap-4 p-4 pb-20">
+    <main className="flex min-h-[calc(100dvh_-_65px)] max-w-[1920px] flex-wrap justify-center gap-4 p-4 pb-20">
       {children}
     </main>
   );

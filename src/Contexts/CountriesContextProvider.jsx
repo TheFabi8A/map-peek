@@ -11,7 +11,11 @@ CountriesContextProvider.propTypes = {
 export default function CountriesContextProvider({ children }) {
   const { dataCountries, isFetching } = useFetch();
 
-  const [searchQuery, setSearchQuery] = useState("");
+  console.log(dataCountries);
+
+  const [searchQuery, setSearchQuery] = useState(
+    sessionStorage.getItem("searchQuery") || "",
+  );
 
   const [currentPage, setCurrentPage] = useState(1);
 

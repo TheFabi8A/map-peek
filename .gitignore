@@ -22,9 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Frontend Mentor
-design
-style-guide.md
-README-Frontend-Mentor.md
-pendientes.txt
