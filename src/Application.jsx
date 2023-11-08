@@ -356,7 +356,7 @@ function createCountryComponent({ countryData, theme }) {
             subtitle={
               <>
                 <div className="flex items-center gap-2">
-                  Código de FIFA: {fifa}
+                  FIFA Code: {fifa}
                   <img
                     className="w-4"
                     src={`${flags.svg}`}
